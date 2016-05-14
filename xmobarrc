@@ -1,0 +1,39 @@
+Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
+        , overrideRedirect = False
+        , lowerOnStart = False
+        , persistent = True
+        , pickBroadest = False
+        , allDesktops = True
+        , hideOnStart = False
+        , borderColor = "#1c1c1c"
+        , border = TopB
+        , bgColor = "#1c1c1c"
+        , fgColor = "#b2b2b2"
+        , position = TopW L 100
+        , commands = [ Run Weather "KJFK" ["-t","<tempC>C","-L","18","-H","25","--normal","green","--high","#df005f","--low","lightblue"] 36000
+                        , Run StdinReader
+                        , Run Network "enp0s25" ["-L","0","-H","32","--normal","green","--high","#df005f"] 10
+                        , Run Network "wlo1" ["-L","0","-H","32","--normal","green","--high","#df005f"] 10
+                        , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                        , Run Memory ["-t","Mem: <usedratio>%"] 10
+                        , Run Swap [] 10
+                        , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+			, Run Battery [ "-t","Batt: <acstatus>"
+			              , "-L","25"
+				      ,"-H","75"
+				      ,"-h","green"
+				      ,"-n","yellow"
+				      ,"-l","#df005f"
+				      ,"--" -- battery specific options
+				            -- discharging options
+					    , "-o" , "<left>% (<timeleft>)"
+					    , "-O" , "Charging (<left>%)"
+					    , "-i" , "Charged"
+				      ] 20
+                        ]
+        , sepChar = "%"
+        , alignSep = "}{"
+        , template = "%StdinReader% | %battery% | %cpu% | %memory% * %swap% | %enp0s25% - %wlo1% }{%KJFK% | <fc=#d75fd7>%date%</fc>"
+        }
+
+  -- old orange #ee9a00

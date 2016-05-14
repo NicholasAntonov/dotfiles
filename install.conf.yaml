@@ -1,0 +1,33 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+- link:
+    ~/.zshrc:
+      force: true
+      path: zshrc
+    ~/.spacemacs:
+      path: spacemacs_config
+    ~/.emacs.d:
+      path: spacemacs/
+    ~/.xmodmap:
+      path: xmodmap
+    ~/.xmonad:
+      path: xmonad/
+    ~/.xmobarrc:
+      path: xmobarrc
+    ~/.xinitrc:
+      path: xinitrc
+    ~/.xscreensaver:
+      path: xscreensaver
+    ~/.gitconfig:
+      path: gitconfig
+    ~/.wallpapers:
+      path: wallpapers/
+    ~/.stalonetrayrc:
+      path: stalonetrayrc
+- clean: ['~']
+- shell:
+  - mkdir -p ~/dev
+  - mkdir -p ~/usb
+  - mkdir -p ~/windows
