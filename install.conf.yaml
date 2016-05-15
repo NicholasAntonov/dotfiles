@@ -27,6 +27,8 @@
       path: wallpapers/
     ~/.stalonetrayrc:
       path: stalonetrayrc
+    ~/.Xresources:
+      path: xresources
 - clean: ['~']
 - shell:
   - mkdir -p ~/dev
