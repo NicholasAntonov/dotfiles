@@ -10,6 +10,7 @@
       path: spacemacs_config
     ~/.emacs.d:
       path: spacemacs/
+      force: true
     ~/.xmodmap:
       path: xmodmap
     ~/.xmonad:
