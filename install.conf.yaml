@@ -29,6 +29,8 @@
       path: stalonetrayrc
     ~/.Xresources:
       path: xresources
+    ~/.gitignore_global:
+      path: gitignore_global
 - clean: ['~']
 - shell:
   - mkdir -p ~/dev
