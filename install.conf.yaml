@@ -31,6 +31,8 @@
       path: xresources
     ~/.gitignore_global:
       path: gitignore_global
+    ~/.config/dunst/dunstrc:
+      path: dunstrc
 - clean: ['~']
 - shell:
   - mkdir -p ~/dev

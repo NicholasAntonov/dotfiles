@@ -15,6 +15,9 @@ feh --bg-scale ~/.wallpapers/blurry-shapes.jpg &
 # Start composition manager (shadows and chrome rendering)
 xcompmgr -n &
 
+# Start notification client
+dunst &
+
 # Fire up apps
 xscreensaver -no-splash &
 
