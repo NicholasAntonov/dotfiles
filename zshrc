@@ -63,6 +63,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+alias donotdisturb='killall -SIGUSR1 dunst'
+alias disturb='killall -SIGUSR2 dunst'
+
 
 #################################################
 #                 macros                        #
