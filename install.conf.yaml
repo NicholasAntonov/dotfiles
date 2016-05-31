@@ -33,8 +33,16 @@
       path: gitignore_global
     ~/.config/dunst/dunstrc:
       path: dunstrc
+    ~/.mpd/mpd.conf:
+      path: mpd.conf
 - clean: ['~']
 - shell:
   - mkdir -p ~/dev
   - mkdir -p ~/usb
   - mkdir -p ~/windows
+  - mkdir -p ~/music
+  - mkdir -p ~/.mpd
+  - touch ~/.mpd/mpd.db
+  - touch ~/.mpd/mpd.log
+  - touch ~/.mpd/mpd.pid
+  - touch ~/.mpd/mpdstate
