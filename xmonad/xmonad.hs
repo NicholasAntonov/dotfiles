@@ -20,8 +20,8 @@ myBorderWidth = 0
 myMask = mod3Mask     -- Rebind Mod to the changed capslock mask
 
 myPurple = "#a45bad"
-
 myWhite = "#e3dedd"
+myGreen = "#2d9574"
 
 myLayouts = tiled ||| Mirror tiled ||| Full ||| spiral goldenRatio
   where
@@ -52,7 +52,7 @@ main = do
         , logHook = myFadeHook >> dynamicLogWithPP xmobarPP
                         { ppOutput =     hPutStrLn xmproc
                         , ppCurrent =    xmobarColor myWhite myPurple . pad
-                        , ppTitle =      xmobarColor "green" "" . shorten 50
+                        , ppTitle =      xmobarColor myGreen "" . shorten 50
                         }
         , modMask = myMask
         , handleEventHook = fullscreenEventHook
