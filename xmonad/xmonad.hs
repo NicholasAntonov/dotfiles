@@ -19,6 +19,10 @@ myBorderWidth = 0
 
 myMask = mod3Mask     -- Rebind Mod to the changed capslock mask
 
+myPurple = "#a45bad"
+
+myWhite = "#e3dedd"
+
 myLayouts = tiled ||| Mirror tiled ||| Full ||| spiral goldenRatio
   where
     -- default tiling algorithm partitions the screen into two panes
@@ -46,8 +50,9 @@ main = do
         , terminal = myTerminal
         , layoutHook = avoidStruts $ smartBorders myLayouts
         , logHook = myFadeHook >> dynamicLogWithPP xmobarPP
-                        { ppOutput = hPutStrLn xmproc
-                        , ppTitle = xmobarColor "green" "" . shorten 50
+                        { ppOutput =     hPutStrLn xmproc
+                        , ppCurrent =    xmobarColor myWhite myPurple . pad
+                        , ppTitle =      xmobarColor "green" "" . shorten 50
                         }
         , modMask = myMask
         , handleEventHook = fullscreenEventHook
