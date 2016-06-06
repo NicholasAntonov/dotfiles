@@ -25,6 +25,12 @@ myPurple = "#a45bad"
 myWhite = "#e3dedd"
 myGreen = "#2d9574"
 
+myLoghook h = myFadeHook >> dynamicLogWithPP xmobarPP
+            { ppOutput     = hPutStrLn h
+            , ppCurrent    = colorFormatter myWhite myPurple . pad
+            , ppTitle      = colorFormatter myGreen "" . shorten 50
+            }
+
 myLayouts = tiled ||| Mirror tiled ||| Full ||| spiral goldenRatio
   where
     -- default tiling algorithm partitions the screen into two panes
@@ -51,11 +57,7 @@ main = do
         { manageHook = manageDocks <+> manageHook defaultConfig
         , terminal = myTerminal
         , layoutHook = avoidStruts $ smartBorders myLayouts
-        , logHook = myFadeHook >> dynamicLogWithPP xmobarPP
-                        { ppOutput =     hPutStrLn xmproc
-                        , ppCurrent =    colorFormatter myWhite myPurple . pad
-                        , ppTitle =      colorFormatter myGreen "" . shorten 50
-                        }
+        , logHook = myLoghook xmproc
         , modMask = myMask
         , handleEventHook = fullscreenEventHook
         , borderWidth = myBorderWidth
