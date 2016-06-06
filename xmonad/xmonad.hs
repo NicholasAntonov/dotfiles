@@ -19,6 +19,8 @@ myBorderWidth = 0
 
 myMask = mod3Mask     -- Rebind Mod to the changed capslock mask
 
+colorFormatter = xmobarColor
+
 myPurple = "#a45bad"
 myWhite = "#e3dedd"
 myGreen = "#2d9574"
@@ -51,8 +53,8 @@ main = do
         , layoutHook = avoidStruts $ smartBorders myLayouts
         , logHook = myFadeHook >> dynamicLogWithPP xmobarPP
                         { ppOutput =     hPutStrLn xmproc
-                        , ppCurrent =    xmobarColor myWhite myPurple . pad
-                        , ppTitle =      xmobarColor myGreen "" . shorten 50
+                        , ppCurrent =    colorFormatter myWhite myPurple . pad
+                        , ppTitle =      colorFormatter myGreen "" . shorten 50
                         }
         , modMask = myMask
         , handleEventHook = fullscreenEventHook
