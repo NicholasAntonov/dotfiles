@@ -15,6 +15,8 @@ import Graphics.X11.ExtraTypes.XF86
 
 myTerminal = "urxvt"
 
+myLauncher = "$(yeganesh -x)" -- -fn '-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*' -nb '#000000' -nf '#FFFFFF' -sb '#7C7C7C' -sf '#CEFFAC')"
+
 myBorderWidth = 0
 
 myMask = mod3Mask     -- Rebind Mod to the changed capslock mask
@@ -63,6 +65,7 @@ main = do
         , borderWidth = myBorderWidth
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock; sleep 0.5 && xset dpms force off")
+        , ((myMask, xK_p), spawn myLauncher)
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
         , ((0, xK_Print), spawn "scrot")
         , ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10")
