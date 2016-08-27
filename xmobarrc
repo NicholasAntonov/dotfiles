@@ -18,18 +18,18 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
                         , Run Swap [] 10
                         , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
-			, Run Battery [ "-t","Batt: <acstatus>"
-			              , "-L","25"
-				      ,"-H","75"
-				      ,"-h","green"
-				      ,"-n","yellow"
-				      ,"-l","#df005f"
-				      ,"--" -- battery specific options
-				            -- discharging options
-					    , "-o" , "<left>% (<timeleft>)"
-					    , "-O" , "Charging (<left>%)"
-					    , "-i" , "Charged"
-				      ] 20
+                        , Run Battery [ "-t","Batt: <acstatus>"
+                                      , "-L","25"
+                                      ,"-H","75"
+                                      ,"-h","green"
+                                      ,"-n","yellow"
+                                      ,"-l","#df005f"
+                                      ,"--" -- battery specific options
+                                        -- discharging options
+                                      , "-o" , "<left>% (<timeleft>)"
+                                      , "-O" , "Charging (<left>%)"
+                                      , "-i" , "Charged"
+                                      ] 20
                         ]
         , sepChar = "%"
         , alignSep = "}{"
