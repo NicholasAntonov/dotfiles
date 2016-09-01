@@ -41,6 +41,9 @@ export TZ=America/New_York
 
 export LAB="nantonov@linux-lab.cs.stevens.edu"
 
+export NAME="Nicholas Antonov"
+export EMAIL="nicholas.antonov@gmail.com"
+
 
 #################################################
 #                aliases                        #
