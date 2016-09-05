@@ -42,6 +42,7 @@ values."
 
      helm
      c-c++
+     java
      emacs-lisp
      clojure
      python
@@ -52,12 +53,13 @@ values."
      git
      markdown
      org
+     graphviz
      yaml
 
      speed-reading
      (shell :variables
-           shell-default-height 30
-           shell-default-position 'bottom)
+            shell-default-height 30
+            shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
@@ -294,8 +296,13 @@ you should place your code here."
   (setq org-agenda-files '("~/org"))
   (dtrt-indent-mode t)
   (setq org-reveal-root "./reveal.js")
-  ;;(add-to-list 'default-frame-alist '(tty-color-mode . -1))
-  )
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((python . t)
+     (dot . t)))
+
+;;(add-to-list 'default-frame-alist '(tty-color-mode . -1))
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
