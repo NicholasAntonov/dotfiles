@@ -140,6 +140,22 @@ function fs() {
 	  fi;
 }
 
+function currvol {
+    pactl list |
+    grep "Volume:" |
+    head -n 3 |
+    tail -n 1 |
+    sed 's/.*\s\([0-9]\+\)\%.*/\1/'
+}
+
+function volchange {
+    local n="$1"
+
+    local current=`currvol`
+
+    pactl -- set-sink-volume 1 $(($n + $current))%
+}
+
 
 #################################################
 #                 antigen                       #

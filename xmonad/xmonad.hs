@@ -70,6 +70,6 @@ main = do
         , ((0, xK_Print), spawn "scrot")
         , ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10")
         , ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10")
-        -- , ((0, xF86XK_AudioLowerVolume), lowerVolume 5 >> return ())
-        -- , ((0, xF86XK_AudioRaiseVolume), raiseVolume 5 >> return ())
+        , ((0, xF86XK_AudioRaiseVolume), spawn "volchange 10")
+        , ((0, xF86XK_AudioLowerVolume), spawn "volchange -10")
         ]
