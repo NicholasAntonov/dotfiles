@@ -49,6 +49,7 @@ values."
      react
      haskell
      fsharp
+     ocaml
 
      git
      markdown
