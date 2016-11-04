@@ -50,6 +50,7 @@ values."
      haskell
      fsharp
      ocaml
+     erlang
 
      git
      markdown
