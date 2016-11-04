@@ -42,6 +42,7 @@
   - mkdir -p ~/windows
   - mkdir -p ~/music
   - mkdir -p ~/.mpd
+  - mkdir -p ~/.mpd/playlists
   - touch ~/.mpd/mpd.db
   - touch ~/.mpd/mpd.log
   - touch ~/.mpd/mpd.pid
