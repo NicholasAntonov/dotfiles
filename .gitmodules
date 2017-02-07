@@ -5,3 +5,6 @@
 	path = spacemacs
 	url = https://github.com/syl20bnr/spacemacs.git
 	branch = develop
+[submodule "antigen"]
+	path = antigen
+	url = https://github.com/zsh-users/antigen.git
