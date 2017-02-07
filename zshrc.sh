@@ -202,8 +202,18 @@ antigen theme agnoster
 antigen apply
 
 #################################################
-#                 startup                       #
+#                 Applications                  #
 #################################################
+
+## NVM
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh" > /dev/null 2> /dev/null || true
+
 
 # OPAM configuration
 . /home/hyper/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+#################################################
+#                 startup                       #
+#################################################
+
