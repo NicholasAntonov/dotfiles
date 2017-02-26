@@ -30,10 +30,11 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
                                       , "-O" , "Charging (<left>%)"
                                       , "-i" , "Charged"
                                       ] 20
+                        , Run Com "sh" ["-c", "checkupdates | wc -l"] "checkupdates" 3600
                         ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "%StdinReader% | %battery% | %cpu% | %memory% * %swap% | %enp0s25% - %wlo1% }{%KJFK% | <fc=#d75fd7>%date%</fc>"
+        , template = "%StdinReader% | %battery% | %cpu% | %memory% * %swap% | %enp0s25% - %wlo1% }{%checkupdates% | %KJFK% | <fc=#d75fd7>%date%</fc>"
         }
 
   -- old orange #ee9a00
