@@ -55,7 +55,7 @@ myFadeHook = fadeInactiveLogHook fadeAmount
 main = do
     xmproc <- spawnPipe "xmobar"
 
-    xmonad $ defaultConfig
+    xmonad $ docks $ defaultConfig
         { manageHook = manageDocks <+> manageHook defaultConfig
         , terminal = myTerminal
         , layoutHook = avoidStruts $ smartBorders myLayouts
