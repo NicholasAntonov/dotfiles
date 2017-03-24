@@ -1,4 +1,5 @@
-Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
+Config { font = "xft:Hack:pixelsize=12:size=12:antialias=true"
+        , additionalFonts = ["xft:Wuncon Siji:pixelsize=12:size=12"]
         , overrideRedirect = False
         , lowerOnStart = False
         , persistent = True
@@ -12,13 +13,13 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
         , position = TopW L 100
         , commands = [ Run Weather "KJFK" ["-t","<tempC>C","-L","18","-H","25","--normal","green","--high","#df005f","--low","lightblue"] 36000
                         , Run StdinReader
-                        , Run Network "enp0s25" ["-L","0","-H","32","--normal","green","--high","#df005f"] 10
-                        , Run Network "wlo1" ["-L","0","-H","32","--normal","green","--high","#df005f"] 10
-                        , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
-                        , Run Memory ["-t","Mem: <usedratio>%"] 10
-                        , Run Swap [] 10
+                        , Run Network "enp0s25" ["-L","0","-H","32","--normal","green","--high","#df005f", "-S", "True", "-t", "<fn=1></fn> <fn=1></fn><rx><fn=1></fn><tx>"] 10
+                        , Run Network "wlo1" ["-L","0","-H","32","--normal","green","--high","#df005f", "-S", "True", "-t", "<fn=1></fn> <fn=1></fn><rx><fn=1></fn><tx>"] 10
+                        , Run Cpu ["-L","3","-H","50","--normal","green","--high","red", "-t", "<fn=1></fn><total>%"] 10
+                        , Run Memory ["-t","<fn=1></fn><usedratio>%"] 10
+                        , Run Swap ["-t", "<fn=1></fn><usedratio>%"] 10
                         , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
-                        , Run Battery [ "-t","Batt: <acstatus>"
+                        , Run Battery [ "-t","<acstatus>"
                                       , "-L","25"
                                       ,"-H","75"
                                       ,"-h","green"
@@ -26,15 +27,15 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
                                       ,"-l","#df005f"
                                       ,"--" -- battery specific options
                                         -- discharging options
-                                      , "-o" , "<left>% (<timeleft>)"
-                                      , "-O" , "Charging (<left>%)"
-                                      , "-i" , "Charged"
+                                      , "-o" , "<fn=1></fn><left>% (<timeleft>)"
+                                      , "-O" , "<fn=1></fn><left>%"
+                                      , "-i" , "<fn=1></fn>"
                                       ] 20
                         , Run Com "sh" ["-c", "checkupdates | wc -l"] "checkupdates" 3600
                         ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "%StdinReader% | %battery% | %cpu% | %memory% * %swap% | %enp0s25% - %wlo1% }{%checkupdates% | %KJFK% | <fc=#d75fd7>%date%</fc>"
+        , template = "%StdinReader% | %battery% | %cpu% | %memory% %swap% | %enp0s25%%wlo1%}{<fn=1></fn>%checkupdates% | %KJFK% | <fc=#d75fd7>%date%</fc>"
         }
 
   -- old orange #ee9a00
