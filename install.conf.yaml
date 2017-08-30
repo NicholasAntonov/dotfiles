@@ -1,51 +1,33 @@
 - defaults:
     link:
-      create: true
-      relink: true
+        create: true
+        relink: true
 - link:
-    ~/.zshrc:
-      force: true
-      path: zshrc.sh
-    ~/.spacemacs:
-      path: spacemacs_config
-    ~/.emacs.d:
-      path: spacemacs/
-      force: true
-    ~/.xmodmap:
-      path: xmodmap
-    ~/.xmonad:
-      path: xmonad/
-    ~/.xmobarrc:
-      path: xmobarrc
-    ~/.xinitrc:
-      path: xinitrc
-    ~/.xscreensaver:
-      path: xscreensaver
-    ~/.gitconfig:
-      path: gitconfig
-    ~/.wallpapers:
-      path: wallpapers/
-    ~/.stalonetrayrc:
-      path: stalonetrayrc
-    ~/.Xresources:
-      path: xresources
-    ~/.gitignore_global:
-      path: gitignore_global
-    ~/.config/dunst/dunstrc:
-      path: dunstrc
-    ~/.mpd/mpd.conf:
-      path: mpd.conf
-    ~/.tmux.conf:
-      path: tmux.conf
+    ~/.zshrc: zshrc.sh
+    ~/.spacemacs: spacemacs_config
+    ~/.emacs.d: spacemacs/
+    ~/.xmodmap: xmodmap
+    ~/.xmonad: xmonad/
+    ~/.xmobarrc: xmobarrc
+    ~/.xinitrc: xinitrc
+    ~/.xscreensaver: xscreensaver
+    ~/.gitconfig: gitconfig
+    ~/.wallpapers: wallpapers/
+    ~/.stalonetrayrc: stalonetrayrc
+    ~/.Xresources: xresources
+    ~/.gitignore_global: gitignore_global
+    ~/.config/dunst/dunstrc: dunstrc
+    ~/.mpd/mpd.conf: mpd.conf
+    ~/.tmux.conf: tmux.conf
 - clean: ['~']
 - shell:
-  - mkdir -p ~/dev
-  - mkdir -p ~/usb
-  - mkdir -p ~/windows
-  - mkdir -p ~/music
-  - mkdir -p ~/.mpd
-  - mkdir -p ~/.mpd/playlists
-  - touch ~/.mpd/mpd.db
-  - touch ~/.mpd/mpd.log
-  - touch ~/.mpd/mpd.pid
-  - touch ~/.mpd/mpdstate
+    - mkdir -p ~/dev
+    - mkdir -p ~/usb
+    - mkdir -p ~/windows
+    - mkdir -p ~/music
+    - mkdir -p ~/.mpd
+    - mkdir -p ~/.mpd/playlists
+    - touch ~/.mpd/mpd.db
+    - touch ~/.mpd/mpd.log
+    - touch ~/.mpd/mpd.pid
+    - touch ~/.mpd/mpdstate
