@@ -2,7 +2,7 @@
 	email = nicholasantonov@gmail.com
 	name = nicholas antonov
 [push]
-	default = matching
+	default = current
 [core]
 	trustctime = false
 	# False for linux, on windows should be true
