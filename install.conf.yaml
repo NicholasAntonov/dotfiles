@@ -31,3 +31,4 @@
     - touch ~/.mpd/mpd.log
     - touch ~/.mpd/mpd.pid
     - touch ~/.mpd/mpdstate
+    - touch ~/startup.sh
